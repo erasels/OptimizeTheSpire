@@ -1,7 +1,7 @@
 # Optimize the Spire
 A mod for slightly invasive performance optimization for StS with compatability kept in mind but not guranteed.
 
-**Current changes:**
+**Current changes:**  
 Changes AbstractPlayer.getRelic and hasRelic to turn relic access from O(n) into O(1) by using a hashmap of relic locations.
 In a heavily modded run that took about 1.5 hours this saved about 4 billion unnecessary element iterations.
 
