@@ -40,7 +40,7 @@ public class OptimizeTheSpire implements
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
-        if((AbstractDungeon.floorNum % 10) == 0) {
+        if((AbstractDungeon.floorNum % 5) == 0) {
             optimizationLogger.info("Unneeded element iterations skipped: " + rIterSkipped);
             optimizationLogger.info("Logs prevented: " + logsSkipped);
             if (wrongPosition > 0) {
