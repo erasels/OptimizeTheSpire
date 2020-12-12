@@ -1,15 +1,9 @@
-# SacredBarkPlus (https://steamcommunity.com/sharedfiles/filedetails/?id=1897335248)
-Sacred Bark is a new relic from the beta branch that doubles potion effectiveness. Potions that don't rely on numbers are sadly ignored and don't receive any benefit from this relic.
+# Optimize the Spire
+A mod for slightly invasive performance optimization for StS with compatability kept in mind but not guranteed.
 
-This mod fixes that.
+**Current changes:**
+Changes AbstractPlayer.getRelic and hasRelic to turn relic access from O(n) into O(1) by using a hashmap of relic locations.
+In a heavily modded run that took about 1.5 hours this saved about 4 billion unnecessary element iterations.
 
-Every potion that can't have its "potency" doubled can instead be used twice.
-
-This includes the following potions:
-Ambrosia
-Blessing of the forge
-Elixir
-Entropic Brew
-Gamblers Brew
-Smokebomb
-Stance potion
+Wraps loggers in a new logger which skips most unneccesary log spam for the MtS console. Error and Fatal logs are still displayed so crashes can be read.
+Printing to the console is a very wasteful process, skipping most of the bloat makes things like starting a new run or the game smoother and on lower-end PCs, maybe even the combat.
