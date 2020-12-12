@@ -7,12 +7,13 @@ import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.PreStartGameSubscriber;
 import basemod.interfaces.RelicGetSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static OptimizeTheSpire.patches.MiscPatches.logsSkipped;
+import static OptimizeTheSpire.patches.AntiConsolePrintingPatches.logsSkipped;
 import static OptimizeTheSpire.patches.RelicOptimizationPatches.*;
 
 @SpireInitializer
@@ -39,10 +40,12 @@ public class OptimizeTheSpire implements
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
-        optimizationLogger.info("Unneeded element iterations skipped: " + rIterSkipped);
-        optimizationLogger.info("Logs prevented: " + logsSkipped);
-        if(wrongPosition > 0) {
-            optimizationLogger.info("Attempted accesses to wrong relic positions: " + wrongPosition);
+        if((AbstractDungeon.floorNum % 10) == 0) {
+            optimizationLogger.info("Unneeded element iterations skipped: " + rIterSkipped);
+            optimizationLogger.info("Logs prevented: " + logsSkipped);
+            if (wrongPosition > 0) {
+                optimizationLogger.info("Attempted accesses to wrong relic positions: " + wrongPosition);
+            }
         }
     }
 

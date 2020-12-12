@@ -9,7 +9,7 @@ import org.apache.logging.log4j.message.MessageFactory;
 import org.apache.logging.log4j.util.MessageSupplier;
 import org.apache.logging.log4j.util.Supplier;
 
-import static OptimizeTheSpire.patches.MiscPatches.logsSkipped;
+import static OptimizeTheSpire.patches.AntiConsolePrintingPatches.logsSkipped;
 
 public class AntiLogger implements Logger {
     private Logger backup;

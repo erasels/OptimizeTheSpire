@@ -6,7 +6,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class MiscPatches {
+public class AntiConsolePrintingPatches {
     public static int logsSkipped = 0;
     @SpirePatch(clz = LogManager.class, method = "getLogger", paramtypez = {String.class})
     public static class RemoveLogging {
