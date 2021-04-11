@@ -20,7 +20,11 @@ public class AntiLogger implements Logger {
 
     @Override
     public void catching(Level level, Throwable throwable) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.catching(level, throwable);
+        }
     }
 
     @Override
@@ -30,7 +34,11 @@ public class AntiLogger implements Logger {
 
     @Override
     public void debug(Marker marker, Message message) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.debug(marker, message);
+        }
     }
 
     @Override
@@ -60,7 +68,11 @@ public class AntiLogger implements Logger {
 
     @Override
     public void debug(Marker marker, Object o) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.debug(marker, o);
+        }
     }
 
     @Override
@@ -130,7 +142,11 @@ public class AntiLogger implements Logger {
 
     @Override
     public void debug(Object o) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.debug(o);
+        }
     }
 
     @Override
@@ -140,7 +156,11 @@ public class AntiLogger implements Logger {
 
     @Override
     public void debug(String s) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.debug(s);
+        }
     }
 
     @Override
@@ -220,7 +240,11 @@ public class AntiLogger implements Logger {
 
     @Override
     public void debug(String s, Object o) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.debug(s, o);
+        }
     }
 
     @Override
@@ -779,322 +803,514 @@ public class AntiLogger implements Logger {
 
     @Override
     public String getName() {
-            return null;
+            return backup.getName();
     }
 
     @Override
     public void info(Marker marker, Message message) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, message);
+        }
     }
 
     @Override
     public void info(Marker marker, Message message, Throwable throwable) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, message);
+        }
     }
 
     @Override
     public void info(Marker marker, MessageSupplier messageSupplier) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, messageSupplier);
+        }
     }
 
     @Override
     public void info(Marker marker, MessageSupplier messageSupplier, Throwable throwable) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, messageSupplier, throwable);
+        }
     }
 
     @Override
     public void info(Marker marker, CharSequence charSequence) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, charSequence);
+        }
     }
 
     @Override
     public void info(Marker marker, CharSequence charSequence, Throwable throwable) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, charSequence, throwable);
+        }
     }
 
     @Override
     public void info(Marker marker, Object o) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, o);
+        }
     }
 
     @Override
     public void info(Marker marker, Object o, Throwable throwable) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, o, throwable);
+        }
     }
 
     @Override
     public void info(Marker marker, String s) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, s);
+        }
     }
 
     @Override
     public void info(Marker marker, String s, Object... objects) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, s, objects);
+        }
     }
 
     @Override
     public void info(Marker marker, String s, Supplier<?>... suppliers) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, s, suppliers);
+        }
     }
 
     @Override
     public void info(Marker marker, String s, Throwable throwable) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, s, throwable);
+        }
     }
 
     @Override
     public void info(Marker marker, Supplier<?> supplier) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, supplier);
+        }
     }
 
     @Override
     public void info(Marker marker, Supplier<?> supplier, Throwable throwable) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, supplier, throwable);
+        }
     }
 
     @Override
     public void info(Message message) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(message);
+        }
     }
 
     @Override
     public void info(Message message, Throwable throwable) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(message, throwable);
+        }
     }
 
     @Override
     public void info(MessageSupplier messageSupplier) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(messageSupplier);
+        }
     }
 
     @Override
     public void info(MessageSupplier messageSupplier, Throwable throwable) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(messageSupplier, throwable);
+        }
     }
 
     @Override
     public void info(CharSequence charSequence) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(charSequence);
+        }
     }
 
     @Override
     public void info(CharSequence charSequence, Throwable throwable) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(charSequence, throwable);
+        }
     }
 
     @Override
     public void info(Object o) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(o);
+        }
     }
 
     @Override
     public void info(Object o, Throwable throwable) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(o, throwable);
+        }
     }
 
     @Override
     public void info(String s) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(s);
+        }
     }
 
     @Override
     public void info(String s, Object... objects) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(s, objects);
+        }
     }
 
     @Override
     public void info(String s, Supplier<?>... suppliers) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(s, suppliers);
+        }
     }
 
     @Override
     public void info(String s, Throwable throwable) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(s, throwable);
+        }
     }
 
     @Override
     public void info(Supplier<?> supplier) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(supplier);
+        }
     }
 
     @Override
     public void info(Supplier<?> supplier, Throwable throwable) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(supplier, throwable);
+        }
     }
 
     @Override
     public void info(Marker marker, String s, Object o) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, s, o);
+        }
     }
 
     @Override
     public void info(Marker marker, String s, Object o, Object o1) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, s, o, o1);
+        }
     }
 
     @Override
     public void info(Marker marker, String s, Object o, Object o1, Object o2) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, s, o, o1, o2);
+        }
     }
 
     @Override
     public void info(Marker marker, String s, Object o, Object o1, Object o2, Object o3) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, s, o, o1, o2, o3);
+        }
     }
 
     @Override
     public void info(Marker marker, String s, Object o, Object o1, Object o2, Object o3, Object o4) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, s, o, o1);
+        }
     }
 
     @Override
     public void info(Marker marker, String s, Object o, Object o1, Object o2, Object o3, Object o4, Object o5) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, s, o, o1, o2, o3);
+        }
     }
 
     @Override
     public void info(Marker marker, String s, Object o, Object o1, Object o2, Object o3, Object o4, Object o5, Object o6) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, s, o, o1, o2, o3);
+        }
     }
 
     @Override
     public void info(Marker marker, String s, Object o, Object o1, Object o2, Object o3, Object o4, Object o5, Object o6, Object o7) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, s, o, o1, o2, o3);
+        }
     }
 
     @Override
     public void info(Marker marker, String s, Object o, Object o1, Object o2, Object o3, Object o4, Object o5, Object o6, Object o7, Object o8) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, s, o, o1, o2, o3);
+        }
     }
 
     @Override
     public void info(Marker marker, String s, Object o, Object o1, Object o2, Object o3, Object o4, Object o5, Object o6, Object o7, Object o8, Object o9) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(marker, s, o, o1, o2, o3);
+        }
     }
 
     @Override
     public void info(String s, Object o) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(s, o);
+        }
     }
 
     @Override
     public void info(String s, Object o, Object o1) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(s, o, o1);
+        }
     }
 
     @Override
     public void info(String s, Object o, Object o1, Object o2) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(s, o, o1, o2);
+        }
     }
 
     @Override
     public void info(String s, Object o, Object o1, Object o2, Object o3) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(s, o, o1, o2, o3);
+        }
     }
 
     @Override
     public void info(String s, Object o, Object o1, Object o2, Object o3, Object o4) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(s, o, o1, o2, o3);
+        }
     }
 
     @Override
     public void info(String s, Object o, Object o1, Object o2, Object o3, Object o4, Object o5) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(s, o, o1, o2, o3);
+        }
     }
 
     @Override
     public void info(String s, Object o, Object o1, Object o2, Object o3, Object o4, Object o5, Object o6) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(s, o, o1, o2, o3);
+        }
     }
 
     @Override
     public void info(String s, Object o, Object o1, Object o2, Object o3, Object o4, Object o5, Object o6, Object o7) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(s, o, o1, o2, o3);
+        }
     }
 
     @Override
     public void info(String s, Object o, Object o1, Object o2, Object o3, Object o4, Object o5, Object o6, Object o7, Object o8) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(s, o, o1, o2, o3);
+        }
     }
 
     @Override
     public void info(String s, Object o, Object o1, Object o2, Object o3, Object o4, Object o5, Object o6, Object o7, Object o8, Object o9) {
-        logsSkipped++;
+        if(OptimizeTheSpire.shouldSL()) {
+            logsSkipped++;
+        } else {
+            backup.info(s, o, o1, o2, o3);
+        }
     }
 
     @Override
     public boolean isDebugEnabled() {
-            logsSkipped++;   return false;
+            return false;
     }
 
     @Override
     public boolean isDebugEnabled(Marker marker) {
-            logsSkipped++;   return false;
+            return false;
     }
 
     @Override
     public boolean isEnabled(Level level) {
-            logsSkipped++;   return false;
+            return false;
     }
 
     @Override
     public boolean isEnabled(Level level, Marker marker) {
-            logsSkipped++;   return false;
+            return false;
     }
 
     @Override
     public boolean isErrorEnabled() {
-            logsSkipped++;   return false;
+            return false;
     }
 
     @Override
     public boolean isErrorEnabled(Marker marker) {
-            logsSkipped++;   return false;
+            return false;
     }
 
     @Override
     public boolean isFatalEnabled() {
-            logsSkipped++;   return false;
+            return false;
     }
 
     @Override
     public boolean isFatalEnabled(Marker marker) {
-            logsSkipped++;   return false;
+            return false;
     }
 
     @Override
     public boolean isInfoEnabled() {
-            logsSkipped++;   return false;
+            return false;
     }
 
     @Override
     public boolean isInfoEnabled(Marker marker) {
-            logsSkipped++;   return false;
+            return false;
     }
 
     @Override
     public boolean isTraceEnabled() {
-            logsSkipped++;   return false;
+            return false;
     }
 
     @Override
     public boolean isTraceEnabled(Marker marker) {
-            logsSkipped++;   return false;
+            return false;
     }
 
     @Override
     public boolean isWarnEnabled() {
-            logsSkipped++;   return false;
+            return false;
     }
 
     @Override
     public boolean isWarnEnabled(Marker marker) {
-            logsSkipped++;   return false;
+            return false;
     }
 
     @Override
     public void log(Level level, Marker marker, Message message) {
-            logsSkipped++;   logsSkipped++;
+            logsSkipped++;
     }
 
     @Override
