@@ -71,7 +71,7 @@ public class OptimizeTheSpire implements
                 });
         settingsPanel.addUIElement(HHBtn);
 
-        BaseMod.registerModBadge(ImageMaster.loadImage("OptimizeTheSpire/Resources/img/modBadge.png"), "OptimizeTheSpire", "erasels", "TODO", settingsPanel);
+        BaseMod.registerModBadge(ImageMaster.loadImage("OptimizeTheSpireResources/img/modBadge.png"), "OptimizeTheSpire", "erasels", "TODO", settingsPanel);
     }
 
     @Override
