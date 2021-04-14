@@ -6,7 +6,7 @@
     <groupId>UpdateBodyText</groupId>
     <artifactId>OptimizeTheSpire</artifactId>
     <name>Optimize The Spire</name>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <description>Makes a couple of invasive changes with compatability in mind, to make the spire less inefficient.</description>
 
     <properties>
