@@ -9,3 +9,5 @@ Wraps loggers in a new logger which skips most unneccesary log spam for the MtS 
 Printing to the console is a very wasteful process, skipping most of the bloat makes things like starting a new run or the game smoother and on lower-end PCs, maybe even the combat.
 
 Fixed unnecessary sorting of MasterDeck every frame if using a non-standard sort order.
+
+Save card upgrades in the compendium so that they don't get upgraded every frame.
