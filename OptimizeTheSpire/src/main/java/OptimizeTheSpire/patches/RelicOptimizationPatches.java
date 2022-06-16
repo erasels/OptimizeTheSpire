@@ -13,6 +13,7 @@ public class RelicOptimizationPatches {
     //Optimize relic access
     public static int rIterSkipped = 0;
     public static int wrongPosition = 0;
+    public static int relicsSize = -1;
     public static HashMap<String, Integer> relicLocs = new HashMap<>();
 
     @SpirePatch(clz = AbstractPlayer.class, method = "getRelic")
@@ -22,8 +23,15 @@ public class RelicOptimizationPatches {
             AbstractRelic rel;
             Integer i = relicLocs.get(key);
             if (i != null) {
+                int size = __instance.relics.size();
+                if(size != relicsSize) {
+                    relicsSize = size;
+                    //Remove removed relics when relics list size suddenly changes unexpectedly (like Ruina removing all relics for a time)
+                    relicLocs.values().removeIf(val -> val == -1);
+                }
+
                 if (i != -1) {
-                    if (i < __instance.relics.size() && __instance.relics.get(i).relicId.equals(key)) {
+                    if (i < size && __instance.relics.get(i).relicId.equals(key)) {
                         rIterSkipped += i - 1;
                         return SpireReturn.Return(__instance.relics.get(i));
                     } else {
@@ -34,7 +42,7 @@ public class RelicOptimizationPatches {
                         }
                     }
                 } else {
-                    rIterSkipped += __instance.relics.size();
+                    rIterSkipped += size;
                 }
             } else {
                 rel = manualGetRelic(__instance, key);
@@ -57,6 +65,7 @@ public class RelicOptimizationPatches {
     public static void doReceiveRelic(AbstractRelic r) {
         //Relic hasn't been added yet so setting position as size directly functions as last position + 1
         relicLocs.put(r.relicId, AbstractDungeon.player.relics.size());
+        relicsSize++;
     }
 
     public static AbstractRelic manualGetRelic(AbstractPlayer p, String key) {
