@@ -6,8 +6,8 @@
     <groupId>UpdateBodyText</groupId>
     <artifactId>OptimizeTheSpire</artifactId>
     <name>Optimize The Spire</name>
-    <version>1.1.0</version>
-    <description>Makes a couple of invasive changes with compatability in mind, to make the spire less inefficient.</description>
+    <version>1.2.0</version>
+    <description>Makes a couple of invasive changes with compatibility in mind, to make the spire less inefficient.</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -15,7 +15,7 @@
         <SlayTheSpire.version>01-23-2019</SlayTheSpire.version>
         <ModTheSpire.version>3.8.0</ModTheSpire.version>
         <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
-        <Steam.path>K:/Steam/steamapps</Steam.path>
+        <Steam.path>E:/SteamLibrary/steamapps</Steam.path>
     </properties>
 
     <dependencies>
